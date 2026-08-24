@@ -44,7 +44,7 @@ export default function App() {
         onClose={() => setIsInquiryOpen(false)}
       />
 
-      <main className="relative min-h-screen bg-white pt-[64px] lg:pt-[98px]">
+      <main className="relative min-h-screen bg-white">
         <ProductHero onOpenInquiry={() => setIsInquiryOpen(true)} />
         <ProductDetails />
         <BathroomConcepts />
