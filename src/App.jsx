@@ -59,29 +59,38 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen bg-white text-ink antialiased">
-      {/* Route Switcher Floating Floating Pill */}
-      <div className="fixed bottom-5 right-5 z-50 flex items-center gap-1 rounded-full border border-ink/20 bg-white/95 px-2 py-1.5 shadow-lg backdrop-blur-md">
+      {/* Route Switcher Floating Pill */}
+      <div
+        className="fixed bottom-6 right-6 flex items-center gap-2 rounded-full border border-ink/30 bg-white shadow-2xl backdrop-blur-xl ring-1 ring-black/5"
+        style={{ zIndex: 9999, padding: '6px' }}
+      >
         <button
           type="button"
           onClick={() => navigateTo('option1')}
-          className={`rounded-full px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] transition-all duration-200 ${
+          className={`flex h-10 w-10 items-center justify-center rounded-full text-[14px] font-bold transition-all duration-200 cursor-pointer ${
             currentRoute === 'option1'
-              ? 'bg-ink text-white shadow-xs'
-              : 'text-ink/60 hover:text-ink hover:bg-ink/5'
+              ? 'bg-ink text-white shadow-md scale-105'
+              : 'text-ink/70 hover:text-ink hover:bg-ink/10'
           }`}
+          style={{ fontFamily: 'var(--font-mulish)', fontWeight: 700 }}
+          title="Option 1"
+          aria-label="Option 1"
         >
-          Option 1 (Main)
+          1
         </button>
         <button
           type="button"
           onClick={() => navigateTo('option2')}
-          className={`rounded-full px-3.5 py-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] transition-all duration-200 ${
+          className={`flex h-10 w-10 items-center justify-center rounded-full text-[14px] font-bold transition-all duration-200 cursor-pointer ${
             currentRoute === 'option2'
-              ? 'bg-ink text-white shadow-xs'
-              : 'text-ink/60 hover:text-ink hover:bg-ink/5'
+              ? 'bg-ink text-white shadow-md scale-105'
+              : 'text-ink/70 hover:text-ink hover:bg-ink/10'
           }`}
+          style={{ fontFamily: 'var(--font-mulish)', fontWeight: 700 }}
+          title="Option 2"
+          aria-label="Option 2"
         >
-          Option 2
+          2
         </button>
       </div>
 

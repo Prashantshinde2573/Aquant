@@ -123,9 +123,8 @@ export default function ProductDetails() {
                 {tab.label}
                 {/* Animated Underline Indicator */}
                 <span
-                  className={`absolute bottom-0 left-0 right-0 h-[2px] bg-ink transition-transform duration-300 ease-out origin-left ${
-                    isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'
-                  }`}
+                  className={`absolute bottom-0 left-0 right-0 h-[2px] bg-ink transition-transform duration-300 ease-out origin-left ${isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-50'
+                    }`}
                 />
               </button>
             );

@@ -23,7 +23,7 @@ export default function ProductHero({ onOpenInquiry }) {
                 alert('Product link copied to clipboard!');
               }
             }}
-            className="inline-flex items-center gap-2 rounded-xl border border-ink/30 bg-transparent px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-ink transition-colors hover:border-ink hover:bg-ink/5"
+            className="inline-flex items-center gap-2 rounded-none border border-ink/30 bg-transparent px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.14em] text-ink transition-colors hover:border-ink hover:bg-ink/5" style={{ borderRadius: "0px" }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <circle cx="18" cy="5" r="3"></circle>
@@ -32,18 +32,19 @@ export default function ProductHero({ onOpenInquiry }) {
               <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
               <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
             </svg>
-            <span>SHARE</span>
+            <span style={{ letterSpacing: "1.68px" }}>SHARE</span>
           </button>
         </div>
 
         {/* Product Title */}
-        <h1 className="mt-2 font-display text-[40px] leading-[1.05] tracking-tight text-ink sm:text-[48px] lg:text-[56px]">
+        <h1 className="mt-1.5 font-display text-[40px] leading-[1.05] tracking-tight text-ink sm:text-[48px] lg:text-[56px]">
           Astraea Carrara
         </h1>
 
-        {/* Item Code */}
-        <p className="mt-3 font-sans text-[22px] font-bold capitalize tracking-[0.02em] text-ink sm:text-[24px] lg:text-[26px]" style={{ fontFamily: "var(--font-mulish)" }}>
-          Item Code · 9272
+        {/* Item Code (16px label, 20px number) */}
+        <p className="mt-1 font-sans font-bold capitalize text-ink" style={{ fontFamily: "var(--font-mulish)" }}>
+          <span className="text-[16px] tracking-[0.02em]">Item Code · </span>
+          <span className="text-[20px] tracking-[0.02em]">9272</span>
         </p>
 
         {/* Short Description */}
@@ -52,21 +53,18 @@ export default function ProductHero({ onOpenInquiry }) {
           Naturally unique, pressure-tested, and made to order.
         </p>
 
-        {/* Price Row */}
-        <div className="mt-7 flex flex-wrap items-baseline gap-3">
-          <span className="font-display text-[18px] font-normal leading-none text-ink/80 sm:text-[19px] lg:text-[20px]">
+        {/* Price Row (Mulish Bold) */}
+        <div className="mt-6 flex flex-wrap items-baseline gap-3">
+          <span className="font-sans text-[18px] font-bold leading-none text-ink sm:text-[19px] lg:text-[20px]" style={{ fontFamily: "var(--font-mulish)", fontWeight: 700 }}>
             ₹4,75,000
-          </span>
-          <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-ink/50 lg:text-[12px]">
-            MRP · INCL. TAXES
           </span>
         </div>
 
         {/* Finish Selector Section */}
         <div className="mt-7">
-          <div className="flex items-center gap-2 text-[12px] font-semibold uppercase tracking-[0.20em] text-ink">
-            <span className="text-ink/60">FINISH:</span>
-            <span className="text-ink">{selectedFinish}</span>
+          <div className="flex items-center gap-2 text-[12px] font-semibold text-ink">
+            <span className="text-ink/60" style={{ letterSpacing: "2.42px" }}>FINISH:</span>
+            <span className="font-sans text-[14px] font-bold capitalize text-ink" style={{ fontFamily: "var(--font-mulish)", fontWeight: 700 }}>{selectedFinish}</span>
           </div>
 
           <div className="mt-3 flex items-center gap-3">
@@ -76,12 +74,14 @@ export default function ProductHero({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Gold')}
               title="Gold Finish"
               aria-label="Select Gold finish"
-              className={`h-11 w-11 rounded-xl border transition-all duration-200 ${
+              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
                 selectedFinish === 'Gold'
-                  ? 'border-ink ring-2 ring-ink ring-offset-2 scale-105'
-                  : 'border-ink/20 hover:border-ink/40'
+                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
+                  : 'border-ink/15 hover:border-ink/35'
               }`}
               style={{
+                width: '40px',
+                height: '48px',
                 background: 'linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%)'
               }}
             />
@@ -92,12 +92,14 @@ export default function ProductHero({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Rose Gold')}
               title="Rose Gold Finish"
               aria-label="Select Rose Gold finish"
-              className={`h-11 w-11 rounded-xl border transition-all duration-200 ${
+              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
                 selectedFinish === 'Rose Gold'
-                  ? 'border-ink ring-2 ring-ink ring-offset-2 scale-105'
-                  : 'border-ink/20 hover:border-ink/40'
+                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
+                  : 'border-ink/15 hover:border-ink/35'
               }`}
               style={{
+                width: '40px',
+                height: '48px',
                 background: 'linear-gradient(135deg, #b76e79 0%, #e8c5c8 50%, #8c4a52 100%)'
               }}
             />
@@ -108,12 +110,14 @@ export default function ProductHero({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Chrome')}
               title="Chrome Finish"
               aria-label="Select Chrome finish"
-              className={`h-11 w-11 rounded-xl border transition-all duration-200 ${
+              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
                 selectedFinish === 'Chrome'
-                  ? 'border-ink ring-2 ring-ink ring-offset-2 scale-105'
-                  : 'border-ink/20 hover:border-ink/40'
+                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
+                  : 'border-ink/15 hover:border-ink/35'
               }`}
               style={{
+                width: '40px',
+                height: '48px',
                 background: 'linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #9e9e9e 100%)'
               }}
             />
@@ -122,7 +126,7 @@ export default function ProductHero({ onOpenInquiry }) {
 
         {/* Quantity Section */}
         <div className="mt-7">
-          <label className="block text-[11px] font-semibold uppercase tracking-[0.22em] text-ink/60 mb-2">
+          <label className="block text-[11px] font-semibold uppercase text-ink/60 mb-2" style={{ letterSpacing: "2.42px" }}>
             QUANTITY
           </label>
           <div className="inline-flex items-center rounded-xl border border-ink/40 bg-transparent px-3 py-1.5">
@@ -159,7 +163,7 @@ export default function ProductHero({ onOpenInquiry }) {
           <button
             type="button"
             onClick={() => setIsWishlisted(!isWishlisted)}
-            className="inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-ink px-6 py-4 text-[12px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm transition-all duration-200 hover:bg-ink/90 active:scale-[0.99]"
+            className="inline-flex w-full items-center justify-center gap-2.5 rounded-none bg-ink px-6 py-4 text-[12px] font-semibold uppercase tracking-[0.16em] text-white shadow-sm transition-all duration-200 hover:bg-ink/90 active:scale-[0.99]" style={{ borderRadius: "0px" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +179,7 @@ export default function ProductHero({ onOpenInquiry }) {
             >
               <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
             </svg>
-            <span>{isWishlisted ? 'WISHLISTED' : 'ADD TO WISHLIST'}</span>
+            <span style={{ letterSpacing: "1.68px" }}>{isWishlisted ? 'WISHLISTED' : 'ADD TO WISHLIST'}</span>
           </button>
 
           {/* Download Brochure Button */}
@@ -184,7 +188,7 @@ export default function ProductHero({ onOpenInquiry }) {
             onClick={() => {
               window.open('/catalogs-brochures', '_blank');
             }}
-            className="inline-flex w-full items-center justify-center gap-2.5 rounded-xl border border-ink bg-transparent px-6 py-4 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink transition-all duration-200 hover:bg-ink/5 active:scale-[0.99]"
+            className="inline-flex w-full items-center justify-center gap-2.5 rounded-none border border-ink bg-transparent px-6 py-4 text-[12px] font-semibold uppercase tracking-[0.16em] text-ink transition-all duration-200 hover:bg-ink/5 active:scale-[0.99]" style={{ borderRadius: "0px" }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -202,16 +206,16 @@ export default function ProductHero({ onOpenInquiry }) {
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" x2="12" y1="15" y2="3"></line>
             </svg>
-            <span>DOWNLOAD BROCHURE</span>
+            <span style={{ letterSpacing: "1.68px" }}>DOWNLOAD BROCHURE</span>
           </button>
         </div>
 
-        {/* Compact Contact Links */}
-        {/* Minimal Editorial Service Links */}
-        <div className="mt-8 flex flex-col gap-3">
+        {/* Editorial Service Links (Vertically Stacked, Uppercase, Chevron on Left) */}
+        <div className="mt-8 flex flex-col gap-3 pb-5 border-b border-ink/15">
           <a
             href="tel:18002677797"
-            className="group inline-flex items-center gap-2.5 text-[12px] font-semibold uppercase tracking-[0.20em] text-ink transition-colors hover:text-ink/70 lg:text-[13px]"
+            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70 lg:text-[13px]"
+            style={{ fontFamily: 'var(--font-mulish)' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -223,7 +227,7 @@ export default function ProductHero({ onOpenInquiry }) {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-ink transition-transform duration-200 group-hover:translate-x-0.5"
+              className="text-ink shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
               aria-hidden="true"
             >
               <path d="m9 18 6-6-6-6" />
@@ -233,7 +237,8 @@ export default function ProductHero({ onOpenInquiry }) {
 
           <a
             href="/experience-centres"
-            className="group inline-flex items-center gap-2.5 text-[12px] font-semibold uppercase tracking-[0.20em] text-ink transition-colors hover:text-ink/70 lg:text-[13px]"
+            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70 lg:text-[13px]"
+            style={{ fontFamily: 'var(--font-mulish)' }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -245,7 +250,7 @@ export default function ProductHero({ onOpenInquiry }) {
               strokeWidth="2"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="text-ink transition-transform duration-200 group-hover:translate-x-0.5"
+              className="text-ink shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
               aria-hidden="true"
             >
               <path d="m9 18 6-6-6-6" />
@@ -253,7 +258,8 @@ export default function ProductHero({ onOpenInquiry }) {
             <span>NEAREST SHOWROOM</span>
           </a>
         </div>
-      </div></div></div></section>
+
+        </div></div></div></section>
     </div>
   );
 }
