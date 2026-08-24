@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export default function ProductDetails() {
+export default function ProductDetailsOption2() {
   const [activeTab, setActiveTab] = useState('specifications');
 
   const tabs = [
