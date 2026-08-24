@@ -209,11 +209,11 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
         </div>
 
         {/* Phone Consultation & Nearest Showroom Side-by-Side Row */}
-        <div className="mt-8 flex flex-wrap items-center gap-6 border-t border-ink/15 pt-5">
+        <div className="mt-8 flex flex-wrap items-center gap-6 pb-5 border-b border-ink/15">
           <a
             href="tel:18002677797"
-            className="group inline-flex items-center gap-2 font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink transition-colors hover:text-ink/70 sm:text-[14px]"
-            style={{ fontFamily: 'var(--font-mulish)' }}
+            className="group inline-flex items-center gap-2 font-sans text-[13px] font-bold capitalize tracking-[0.02em] text-ink transition-colors hover:text-ink/70 sm:text-[14px]"
+            style={{ fontFamily: 'var(--font-mulish)', fontWeight: 700 }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -222,7 +222,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.6"
+              strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
               className="text-ink shrink-0"
@@ -235,8 +235,8 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
 
           <a
             href="/experience-centres"
-            className="group inline-flex items-center gap-2 font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink transition-colors hover:text-ink/70 sm:text-[14px]"
-            style={{ fontFamily: 'var(--font-mulish)' }}
+            className="group inline-flex items-center gap-2 font-sans text-[13px] font-bold capitalize tracking-[0.02em] text-ink transition-colors hover:text-ink/70 sm:text-[14px]"
+            style={{ fontFamily: 'var(--font-mulish)', fontWeight: 700 }}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -245,7 +245,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.6"
+              strokeWidth="1.8"
               strokeLinecap="round"
               strokeLinejoin="round"
               className="text-ink shrink-0"
@@ -259,16 +259,16 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
         </div>
 
         {/* Product Info 3 Accordion Rows */}
-        <div className="mt-4 divide-y divide-ink/15 border-t border-b border-ink/15">
+        <div className="divide-y divide-ink/15 border-b border-ink/15">
           {/* TAB 1: SPECIFICATIONS */}
           <div className="py-1">
             <button
               type="button"
               onClick={() => toggleAccordion('specifications')}
               aria-expanded={openAccordion === 'specifications'}
-              className="flex w-full items-center justify-between py-4 text-left text-[13px] font-bold uppercase tracking-[0.16em] text-ink transition-colors hover:text-ink/75 lg:text-[14px]"
+              className="flex w-full items-center justify-between py-4 text-left text-[13px] font-bold text-ink transition-colors hover:text-ink/75 lg:text-[14px]"
             >
-              <span>SPECIFICATIONS</span>
+              <span>Specifications</span>
               <span className="grid h-6 w-6 place-items-center text-ink/70">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -367,9 +367,9 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               type="button"
               onClick={() => toggleAccordion('technical-drawings')}
               aria-expanded={openAccordion === 'technical-drawings'}
-              className="flex w-full items-center justify-between py-4 text-left text-[13px] font-bold uppercase tracking-[0.16em] text-ink transition-colors hover:text-ink/75 lg:text-[14px]"
+              className="flex w-full items-center justify-between py-4 text-left text-[13px] font-bold text-ink transition-colors hover:text-ink/75 lg:text-[14px]"
             >
-              <span>TECHNICAL DRAWINGS</span>
+              <span>Technical Drawings</span>
               <span className="grid h-6 w-6 place-items-center text-ink/70">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -399,12 +399,14 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75"
                 >
                   <span>Technical Drawing Of Code 9272</span>
-                  <img
-                    src="/file-icons/pdf.png"
-                    alt="PDF Download"
-                    style={{ height: '20px', width: 'auto' }}
-                    className="object-contain shrink-0 transition-transform duration-200 group-hover:scale-105"
-                  />
+                  <div className="flex h-7 w-11 items-center justify-end shrink-0">
+                    <img
+                      src="/file-icons/pdf.png"
+                      alt="PDF Download"
+                      style={{ height: '28px', width: 'auto' }}
+                      className="max-h-7 object-contain transition-transform duration-200 group-hover:scale-105"
+                    />
+                  </div>
                 </a>
 
                 <a
@@ -414,12 +416,14 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75"
                 >
                   <span>9272 DWG</span>
-                  <img
-                    src="/file-icons/dwg.png"
-                    alt="DWG Download"
-                    style={{ height: '20px', width: 'auto' }}
-                    className="object-contain shrink-0 transition-transform duration-200 group-hover:scale-105"
-                  />
+                  <div className="flex h-7 w-11 items-center justify-end shrink-0">
+                    <img
+                      src="/file-icons/dwg.png"
+                      alt="DWG Download"
+                      style={{ height: '28px', width: 'auto' }}
+                      className="max-h-7 object-contain transition-transform duration-200 group-hover:scale-105"
+                    />
+                  </div>
                 </a>
 
                 <a
@@ -429,12 +433,14 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75"
                 >
                   <span>9272 FBX</span>
-                  <img
-                    src="/file-icons/fbx.png"
-                    alt="FBX Download"
-                    style={{ height: '20px', width: 'auto' }}
-                    className="object-contain shrink-0 transition-transform duration-200 group-hover:scale-105"
-                  />
+                  <div className="flex h-7 w-11 items-center justify-end shrink-0">
+                    <img
+                      src="/file-icons/fbx.png"
+                      alt="FBX Download"
+                      style={{ height: '28px', width: 'auto' }}
+                      className="max-h-7 object-contain transition-transform duration-200 group-hover:scale-105"
+                    />
+                  </div>
                 </a>
 
                 <a
@@ -444,12 +450,14 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75"
                 >
                   <span>9272 SKP</span>
-                  <img
-                    src="/file-icons/skp.png"
-                    alt="SKP Download"
-                    style={{ height: '20px', width: 'auto' }}
-                    className="object-contain shrink-0 transition-transform duration-200 group-hover:scale-105"
-                  />
+                  <div className="flex h-7 w-11 items-center justify-end shrink-0">
+                    <img
+                      src="/file-icons/skp.png"
+                      alt="SKP Download"
+                      style={{ height: '28px', width: 'auto' }}
+                      className="max-h-7 object-contain transition-transform duration-200 group-hover:scale-105"
+                    />
+                  </div>
                 </a>
               </div>
             )}
@@ -461,9 +469,9 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               type="button"
               onClick={() => toggleAccordion('care-warranty')}
               aria-expanded={openAccordion === 'care-warranty'}
-              className="flex w-full items-center justify-between py-4 text-left text-[13px] font-bold uppercase tracking-[0.16em] text-ink transition-colors hover:text-ink/75 lg:text-[14px]"
+              className="flex w-full items-center justify-between py-4 text-left text-[13px] font-bold text-ink transition-colors hover:text-ink/75 lg:text-[14px]"
             >
-              <span>CARE + WARRANTY</span>
+              <span>Care + Warranty</span>
               <span className="grid h-6 w-6 place-items-center text-ink/70">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
