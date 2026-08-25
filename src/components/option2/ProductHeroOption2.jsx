@@ -592,7 +592,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   href="https://www.aquantindia.com/warranty"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75"
+                  className="group flex items-center justify-between py-3 text-[15px] font-medium text-ink transition-colors hover:text-ink/75"
                 >
                   <span>Product Warranty</span>
                   <svg
@@ -615,7 +615,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
 
                 <a
                   href="/customer-support"
-                  className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75"
+                  className="group flex items-center justify-between py-3 text-[15px] font-medium text-ink transition-colors hover:text-ink/75"
                 >
                   <span>Customer Care & Warranty Information</span>
                   <svg
@@ -638,7 +638,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
 
                 <a
                   href="/care-maintenance"
-                  className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75"
+                  className="group flex items-center justify-between py-3 text-[15px] font-medium text-ink transition-colors hover:text-ink/75"
                 >
                   <span>Care & Maintenance Guide</span>
                   <svg
