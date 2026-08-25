@@ -41,10 +41,14 @@ export default function ProductHero({ onOpenInquiry }) {
           Astraea Carrara
         </h1>
 
-        {/* Item Code (16px label, 20px number) */}
-        <p className="mt-1 font-sans font-bold capitalize text-ink" style={{ fontFamily: "var(--font-mulish)" }}>
-          <span className="text-[16px] tracking-[0.02em]">Item Code · </span>
-          <span className="text-[20px] tracking-[0.02em]">9272</span>
+        {/* Item Code (Styled like Quantity except for number) */}
+        <p className="mt-1.5 flex items-baseline gap-1.5 font-sans">
+          <span className="text-[12px] font-semibold uppercase text-ink/60" style={{ letterSpacing: "2.42px" }}>
+            ITEM CODE ·
+          </span>
+          <span className="text-[20px] font-bold text-ink" style={{ fontFamily: "var(--font-mulish)", fontWeight: 700 }}>
+            9272
+          </span>
         </p>
 
         {/* Short Description */}
@@ -63,7 +67,7 @@ export default function ProductHero({ onOpenInquiry }) {
         {/* Finish Selector Section */}
         <div className="mt-7">
           <div className="flex items-center gap-2 text-[12px] font-semibold text-ink">
-            <span className="text-ink/60" style={{ letterSpacing: "2.42px" }}>FINISH:</span>
+            <span className="text-[12px] text-ink/60" style={{ letterSpacing: "2.42px" }}>FINISH:</span>
             <span className="font-sans text-[14px] font-bold capitalize text-ink" style={{ fontFamily: "var(--font-mulish)", fontWeight: 700 }}>{selectedFinish}</span>
           </div>
 
@@ -74,15 +78,15 @@ export default function ProductHero({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Gold')}
               title="Gold Finish"
               aria-label="Select Gold finish"
-              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
-                selectedFinish === 'Gold'
-                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
-                  : 'border-ink/15 hover:border-ink/35'
+              className={`w-[40px] h-[48px] rounded-none transition-all duration-200 ${
+                selectedFinish === 'Gold' ? 'scale-105' : ''
               }`}
               style={{
                 width: '40px',
                 height: '48px',
-                background: 'linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%)'
+                borderRadius: '0px',
+                background: 'linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%)',
+                border: selectedFinish === 'Gold' ? '3px solid #444444B2' : '3px solid #e4e3e3'
               }}
             />
 
@@ -92,15 +96,15 @@ export default function ProductHero({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Rose Gold')}
               title="Rose Gold Finish"
               aria-label="Select Rose Gold finish"
-              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
-                selectedFinish === 'Rose Gold'
-                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
-                  : 'border-ink/15 hover:border-ink/35'
+              className={`w-[40px] h-[48px] rounded-none transition-all duration-200 ${
+                selectedFinish === 'Rose Gold' ? 'scale-105' : ''
               }`}
               style={{
                 width: '40px',
                 height: '48px',
-                background: 'linear-gradient(135deg, #b76e79 0%, #e8c5c8 50%, #8c4a52 100%)'
+                borderRadius: '0px',
+                background: 'linear-gradient(135deg, #b76e79 0%, #e8c5c8 50%, #8c4a52 100%)',
+                border: selectedFinish === 'Rose Gold' ? '3px solid #444444B2' : '3px solid #e4e3e3'
               }}
             />
 
@@ -110,15 +114,15 @@ export default function ProductHero({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Chrome')}
               title="Chrome Finish"
               aria-label="Select Chrome finish"
-              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
-                selectedFinish === 'Chrome'
-                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
-                  : 'border-ink/15 hover:border-ink/35'
+              className={`w-[40px] h-[48px] rounded-none transition-all duration-200 ${
+                selectedFinish === 'Chrome' ? 'scale-105' : ''
               }`}
               style={{
                 width: '40px',
                 height: '48px',
-                background: 'linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #9e9e9e 100%)'
+                borderRadius: '0px',
+                background: 'linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #9e9e9e 100%)',
+                border: selectedFinish === 'Chrome' ? '3px solid #444444B2' : '3px solid #e4e3e3'
               }}
             />
           </div>
@@ -126,15 +130,16 @@ export default function ProductHero({ onOpenInquiry }) {
 
         {/* Quantity Section */}
         <div className="mt-7">
-          <label className="block text-[11px] font-semibold uppercase text-ink/60 mb-2" style={{ letterSpacing: "2.42px" }}>
+          <label className="block text-[12px] font-semibold uppercase text-ink/60 mb-2" style={{ letterSpacing: "2.42px" }}>
             QUANTITY
           </label>
-          <div className="inline-flex items-center rounded-xl border border-ink/40 bg-transparent px-3 py-1.5">
+          <div className="inline-flex items-center rounded-none border border-ink/40 bg-transparent px-3 py-1.5" style={{ borderRadius: "0px" }}>
             <button
               type="button"
               onClick={() => setQuantity(q => Math.max(1, q - 1))}
               aria-label="Decrease quantity"
-              className="grid h-8 w-8 place-items-center rounded-lg text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              className="grid h-8 w-8 place-items-center rounded-none text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              style={{ borderRadius: "0px" }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14"></path>
@@ -147,7 +152,8 @@ export default function ProductHero({ onOpenInquiry }) {
               type="button"
               onClick={() => setQuantity(q => q + 1)}
               aria-label="Increase quantity"
-              className="grid h-8 w-8 place-items-center rounded-lg text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              className="grid h-8 w-8 place-items-center rounded-none text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              style={{ borderRadius: "0px" }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14"></path>
@@ -214,7 +220,7 @@ export default function ProductHero({ onOpenInquiry }) {
         <div className="mt-8 flex flex-col gap-3 pb-5 border-b border-ink/15">
           <a
             href="tel:18002677797"
-            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70 lg:text-[13px]"
+            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70"
             style={{ fontFamily: 'var(--font-mulish)' }}
           >
             <svg
@@ -228,6 +234,7 @@ export default function ProductHero({ onOpenInquiry }) {
               strokeLinecap="round"
               strokeLinejoin="round"
               className="text-ink shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
+              style={{ marginLeft: '-5.25px' }}
               aria-hidden="true"
             >
               <path d="m9 18 6-6-6-6" />
@@ -237,7 +244,7 @@ export default function ProductHero({ onOpenInquiry }) {
 
           <a
             href="/experience-centres"
-            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70 lg:text-[13px]"
+            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70"
             style={{ fontFamily: 'var(--font-mulish)' }}
           >
             <svg
@@ -251,6 +258,7 @@ export default function ProductHero({ onOpenInquiry }) {
               strokeLinecap="round"
               strokeLinejoin="round"
               className="text-ink shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
+              style={{ marginLeft: '-5.25px' }}
               aria-hidden="true"
             >
               <path d="m9 18 6-6-6-6" />

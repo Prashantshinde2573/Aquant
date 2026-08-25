@@ -91,12 +91,12 @@ export default function ProductDetails() {
 
   return (
     <section className="relative w-full bg-[#F5EEE8]">
-      <div className="mx-auto w-full max-w-[960px] px-5 py-12 lg:px-16 lg:py-20">
+      <div className="w-full px-5 py-12 lg:px-[clamp(24px,4vw,72px)] lg:py-20">
         {/* Navigation Tabs (Pill Style from designer-wash-basins-aquant-sanitaryware) */}
         <div
           role="tablist"
           aria-label="Product Details Tabs"
-          className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden justify-start sm:justify-center lg:gap-3.5"
+          className="flex gap-2.5 overflow-x-auto pb-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden justify-start lg:gap-3.5"
         >
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
@@ -127,7 +127,7 @@ export default function ProductDetails() {
             role="tabpanel"
             id="panel-specifications"
             aria-labelledby="tab-specifications"
-            className="mt-8 lg:mt-10 animate-fade-in"
+            className="max-w-[960px] mt-8 lg:mt-10 animate-fade-in"
           >
             <div className="divide-y divide-ink/15 border border-ink/15 px-5 lg:px-8">
               {specificationsData.map((item, index) => (
@@ -153,7 +153,7 @@ export default function ProductDetails() {
             role="tabpanel"
             id="panel-technical-drawings"
             aria-labelledby="tab-technical-drawings"
-            className="mt-8 lg:mt-10 animate-fade-in"
+            className="max-w-[960px] mt-8 lg:mt-10 animate-fade-in"
           >
             <div className="divide-y divide-ink/15 border border-ink/15 px-5 lg:px-8">
               {technicalDrawingsData.map((doc, index) => (
@@ -162,8 +162,8 @@ export default function ProductDetails() {
                   href={doc.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={`Download ${doc.title}`}
-                  aria-label={`Download ${doc.title}`}
+                  title={`${index === 0 ? 'Open' : 'Download'} ${doc.title}`}
+                  aria-label={`${index === 0 ? 'Open' : 'Download'} ${doc.title}`}
                   className="flex items-center justify-between py-4 lg:py-5 gap-4 group transition-colors hover:text-ink/80"
                 >
                   {/* Left: Icon in front of text + Text */}
@@ -179,24 +179,43 @@ export default function ProductDetails() {
                     </span>
                   </div>
 
-                  {/* Right: Download Icon */}
+                  {/* Right: Open in New Tab icon for first item, Download icon for remaining items */}
                   <div className="grid h-8 w-8 place-items-center text-ink/60 transition-colors group-hover:text-ink shrink-0">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.8"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="M12 15V3"></path>
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <path d="m7 10 5 5 5-5"></path>
-                    </svg>
+                    {index === 0 ? (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.6"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" x2="21" y1="14" y2="3"></line>
+                      </svg>
+                    ) : (
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M12 15V3"></path>
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <path d="m7 10 5 5 5-5"></path>
+                      </svg>
+                    )}
                   </div>
                 </a>
               ))}
@@ -210,7 +229,7 @@ export default function ProductDetails() {
             role="tabpanel"
             id="panel-care-warranty"
             aria-labelledby="tab-care-warranty"
-            className="mt-8 lg:mt-10 animate-fade-in"
+            className="max-w-[960px] mt-8 lg:mt-10 animate-fade-in"
           >
             <div className="divide-y divide-ink/15 border border-ink/15 px-5 lg:px-8">
               {careWarrantyData.map((item, index) => (

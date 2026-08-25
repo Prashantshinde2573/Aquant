@@ -43,10 +43,14 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
           Astraea Carrara
         </h1>
 
-        {/* Item Code (16px label, 20px number) */}
-        <p className="mt-1 font-sans font-bold capitalize text-ink" style={{ fontFamily: "var(--font-mulish)" }}>
-          <span className="text-[16px] tracking-[0.02em]">Item Code · </span>
-          <span className="text-[20px] tracking-[0.02em]">9272</span>
+        {/* Item Code (Styled like Quantity except for number) */}
+        <p className="mt-1.5 flex items-baseline gap-1.5 font-sans">
+          <span className="text-[12px] font-semibold uppercase text-ink/60" style={{ letterSpacing: "2.42px" }}>
+            ITEM CODE ·
+          </span>
+          <span className="text-[20px] font-bold text-ink" style={{ fontFamily: "var(--font-mulish)", fontWeight: 700 }}>
+            9272
+          </span>
         </p>
 
         {/* Short Description */}
@@ -65,7 +69,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
         {/* Finish Selector Section */}
         <div className="mt-7">
           <div className="flex items-center gap-2 text-[12px] font-semibold text-ink">
-            <span className="text-ink/60" style={{ letterSpacing: "2.42px" }}>FINISH:</span>
+            <span className="text-[12px] text-ink/60" style={{ letterSpacing: "2.42px" }}>FINISH:</span>
             <span className="font-sans text-[14px] font-bold capitalize text-ink" style={{ fontFamily: "var(--font-mulish)", fontWeight: 700 }}>{selectedFinish}</span>
           </div>
 
@@ -76,15 +80,15 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Gold')}
               title="Gold Finish"
               aria-label="Select Gold finish"
-              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
-                selectedFinish === 'Gold'
-                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
-                  : 'border-ink/15 hover:border-ink/35'
+              className={`w-[40px] h-[48px] rounded-xl transition-all duration-200 ${
+                selectedFinish === 'Gold' ? 'scale-105' : ''
               }`}
               style={{
                 width: '40px',
                 height: '48px',
-                background: 'linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%)'
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #d4af37 0%, #f3e5ab 50%, #aa7c11 100%)',
+                border: selectedFinish === 'Gold' ? '3px solid #444444B2' : '3px solid #e4e3e3'
               }}
             />
 
@@ -94,15 +98,15 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Rose Gold')}
               title="Rose Gold Finish"
               aria-label="Select Rose Gold finish"
-              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
-                selectedFinish === 'Rose Gold'
-                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
-                  : 'border-ink/15 hover:border-ink/35'
+              className={`w-[40px] h-[48px] rounded-xl transition-all duration-200 ${
+                selectedFinish === 'Rose Gold' ? 'scale-105' : ''
               }`}
               style={{
                 width: '40px',
                 height: '48px',
-                background: 'linear-gradient(135deg, #b76e79 0%, #e8c5c8 50%, #8c4a52 100%)'
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #b76e79 0%, #e8c5c8 50%, #8c4a52 100%)',
+                border: selectedFinish === 'Rose Gold' ? '3px solid #444444B2' : '3px solid #e4e3e3'
               }}
             />
 
@@ -112,15 +116,15 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               onClick={() => setSelectedFinish('Chrome')}
               title="Chrome Finish"
               aria-label="Select Chrome finish"
-              className={`w-[40px] h-[48px] rounded-xl border transition-all duration-200 ${
-                selectedFinish === 'Chrome'
-                  ? 'border-ink/70 ring-1 ring-ink/30 ring-offset-2 scale-105'
-                  : 'border-ink/15 hover:border-ink/35'
+              className={`w-[40px] h-[48px] rounded-xl transition-all duration-200 ${
+                selectedFinish === 'Chrome' ? 'scale-105' : ''
               }`}
               style={{
                 width: '40px',
                 height: '48px',
-                background: 'linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #9e9e9e 100%)'
+                borderRadius: '12px',
+                background: 'linear-gradient(135deg, #e0e0e0 0%, #ffffff 50%, #9e9e9e 100%)',
+                border: selectedFinish === 'Chrome' ? '3px solid #444444B2' : '3px solid #e4e3e3'
               }}
             />
           </div>
@@ -128,15 +132,16 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
 
         {/* Quantity Section */}
         <div className="mt-7">
-          <label className="block text-[11px] font-semibold uppercase text-ink/60 mb-2" style={{ letterSpacing: "2.42px" }}>
+          <label className="block text-[12px] font-semibold uppercase text-ink/60 mb-2" style={{ letterSpacing: "2.42px" }}>
             QUANTITY
           </label>
-          <div className="inline-flex items-center rounded-xl border border-ink/40 bg-transparent px-3 py-1.5">
+          <div className="inline-flex items-center rounded-none border border-ink/40 bg-transparent px-3 py-1.5" style={{ borderRadius: "0px" }}>
             <button
               type="button"
               onClick={() => setQuantity(q => Math.max(1, q - 1))}
               aria-label="Decrease quantity"
-              className="grid h-8 w-8 place-items-center rounded-lg text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              className="grid h-8 w-8 place-items-center rounded-none text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              style={{ borderRadius: "0px" }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14"></path>
@@ -149,7 +154,8 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               type="button"
               onClick={() => setQuantity(q => q + 1)}
               aria-label="Increase quantity"
-              className="grid h-8 w-8 place-items-center rounded-lg text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              className="grid h-8 w-8 place-items-center rounded-none text-ink/80 transition-colors hover:bg-ink/5 hover:text-ink"
+              style={{ borderRadius: "0px" }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14"></path>
@@ -216,7 +222,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
         <div className="mt-8 flex flex-col gap-3 pb-5 border-b border-ink/15">
           <a
             href="tel:18002677797"
-            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70 lg:text-[13px]"
+            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70"
             style={{ fontFamily: 'var(--font-mulish)' }}
           >
             <svg
@@ -230,6 +236,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               strokeLinecap="round"
               strokeLinejoin="round"
               className="text-ink shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
+              style={{ marginLeft: '-5.25px' }}
               aria-hidden="true"
             >
               <path d="m9 18 6-6-6-6" />
@@ -239,7 +246,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
 
           <a
             href="/experience-centres"
-            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70 lg:text-[13px]"
+            className="group inline-flex items-center gap-2.5 font-sans text-[12px] font-semibold text-ink transition-colors hover:text-ink/70"
             style={{ fontFamily: 'var(--font-mulish)' }}
           >
             <svg
@@ -253,6 +260,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               strokeLinecap="round"
               strokeLinejoin="round"
               className="text-ink shrink-0 transition-transform duration-200 group-hover:translate-x-0.5"
+              style={{ marginLeft: '-5.25px' }}
               aria-hidden="true"
             >
               <path d="m9 18 6-6-6-6" />
@@ -269,7 +277,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               type="button"
               onClick={() => toggleAccordion('specifications')}
               aria-expanded={openAccordion === 'specifications'}
-              className="flex w-full items-center justify-between py-4 text-left text-[15px] font-semibold text-ink transition-colors hover:text-ink/75"
+              className="flex w-full items-center justify-between py-4 text-left text-[20px] font-semibold text-ink transition-colors hover:text-ink/75"
             >
               <span>Specifications</span>
               <span className="grid h-6 w-6 place-items-center text-ink/70">
@@ -296,66 +304,66 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               <div className="pb-5 pt-1 animate-fade-in">
                 <div className="grid grid-cols-1 gap-4 lg:gap-4.5">
                   <div>
-                    <h4 className="font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
+                    <h4 className="font-sans text-[15px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
                       Material :
                     </h4>
-                    <p className="mt-1 text-[13px] leading-relaxed text-ink">
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink">
                       Premium Carrara Marble, known for its elegant white background with subtle grey veining.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
+                    <h4 className="font-sans text-[15px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
                       Aesthetic Appeal :
                     </h4>
-                    <p className="mt-1 text-[13px] leading-relaxed text-ink">
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink">
                       Offers a luxurious and timeless look, enhancing bathroom décor.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
+                    <h4 className="font-sans text-[15px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
                       Size :
                     </h4>
-                    <p className="mt-1 text-[13px] leading-relaxed text-ink">
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink">
                       460 × 430 × 850 mm – a compact yet stylish design suitable for various spaces.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
+                    <h4 className="font-sans text-[15px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
                       Durability :
                     </h4>
-                    <p className="mt-1 text-[13px] leading-relaxed text-ink">
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink">
                       Naturally strong and resistant to wear, ensuring long-lasting beauty.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
+                    <h4 className="font-sans text-[15px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
                       Finish :
                     </h4>
-                    <p className="mt-1 text-[13px] leading-relaxed text-ink">
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink">
                       Smooth, polished surface for a refined appearance.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
+                    <h4 className="font-sans text-[15px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
                       Versatility :
                     </h4>
-                    <p className="mt-1 text-[13px] leading-relaxed text-ink">
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink">
                       Complements both classic and modern bathroom interiors.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
+                    <h4 className="font-sans text-[15px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
                       Uniqueness :
                     </h4>
-                    <p className="mt-1 text-[13px] leading-relaxed text-ink">
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink">
                       Each piece has distinct veining, making every basin one of a kind.
                     </p>
                   </div>
                   <div>
-                    <h4 className="font-sans text-[13px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
+                    <h4 className="font-sans text-[15px] font-semibold capitalize tracking-[0.02em] text-ink/75" style={{ fontFamily: "var(--font-mulish)", fontWeight: 600 }}>
                       Ease Of Maintenance :
                     </h4>
-                    <p className="mt-1 text-[13px] leading-relaxed text-ink">
+                    <p className="mt-1 text-[14px] leading-relaxed text-ink">
                       Requires regular sealing and gentle cleaning to preserve its elegance.
                     </p>
                   </div>
@@ -370,7 +378,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               type="button"
               onClick={() => toggleAccordion('technical-drawings')}
               aria-expanded={openAccordion === 'technical-drawings'}
-              className="flex w-full items-center justify-between py-4 text-left text-[15px] font-semibold text-ink transition-colors hover:text-ink/75"
+              className="flex w-full items-center justify-between py-4 text-left text-[20px] font-semibold text-ink transition-colors hover:text-ink/75"
             >
               <span>Technical Drawings</span>
               <span className="grid h-6 w-6 place-items-center text-ink/70">
@@ -399,7 +407,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   href="https://www.aquantindia.com/product_files/9272/9272.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75 gap-3"
+                  className="group flex items-center justify-between py-3 text-[15px] font-medium text-ink transition-colors hover:text-ink/75 gap-3"
                 >
                   <div className="flex items-center gap-5 min-w-0">
                     <div className="flex items-center justify-start shrink-0">
@@ -421,14 +429,14 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="1.8"
+                      strokeWidth="1.6"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       aria-hidden="true"
                     >
-                      <path d="M12 15V3"></path>
-                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                      <path d="m7 10 5 5 5-5"></path>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                      <polyline points="15 3 21 3 21 9"></polyline>
+                      <line x1="10" x2="21" y1="14" y2="3"></line>
                     </svg>
                   </div>
                 </a>
@@ -437,7 +445,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   href="https://www.aquantindia.com/product_files/9272/9272.dwg"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75 gap-3"
+                  className="group flex items-center justify-between py-3 text-[15px] font-medium text-ink transition-colors hover:text-ink/75 gap-3"
                 >
                   <div className="flex items-center gap-5 min-w-0">
                     <div className="flex items-center justify-start shrink-0">
@@ -475,7 +483,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   href="https://www.aquantindia.com/product_files/9272/9272.fbx"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75 gap-3"
+                  className="group flex items-center justify-between py-3 text-[15px] font-medium text-ink transition-colors hover:text-ink/75 gap-3"
                 >
                   <div className="flex items-center gap-5 min-w-0">
                     <div className="flex items-center justify-start shrink-0">
@@ -513,7 +521,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
                   href="https://www.aquantindia.com/product_files/9272/9272.skp"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between py-3 text-[13px] font-medium text-ink transition-colors hover:text-ink/75 gap-3"
+                  className="group flex items-center justify-between py-3 text-[15px] font-medium text-ink transition-colors hover:text-ink/75 gap-3"
                 >
                   <div className="flex items-center gap-5 min-w-0">
                     <div className="flex items-center justify-start shrink-0">
@@ -555,7 +563,7 @@ export default function ProductHeroOption2({ onOpenInquiry }) {
               type="button"
               onClick={() => toggleAccordion('care-warranty')}
               aria-expanded={openAccordion === 'care-warranty'}
-              className="flex w-full items-center justify-between py-4 text-left text-[15px] font-semibold text-ink transition-colors hover:text-ink/75"
+              className="flex w-full items-center justify-between py-4 text-left text-[20px] font-semibold text-ink transition-colors hover:text-ink/75"
             >
               <span>Care + Warranty</span>
               <span className="grid h-6 w-6 place-items-center text-ink/70">
